@@ -1,5 +1,6 @@
 package com.fju;
 
+import java.util.Scanner;
 public class ATM {
     private User[]users = new User[100];
 
@@ -26,5 +27,41 @@ public class ATM {
             }
         }
         return null;
+    }
+
+    public void menu(){
+        Scanner scan = new Scanner(System.in);
+        do {
+            System.out.println("Welcome to the ATM");
+            System.out.println("1.Save\n2.Withdraw\n3.Trans\n4.Query\n5.Revise Password\n0.Exit");
+
+            int num = scan.nextInt();
+            switch (num){
+
+                case 1:
+                    save();
+                    break;
+
+                case 2:
+                    withdraw();
+                    break;
+
+                case 3:
+                    transfer();
+                    break;
+
+                case 4:
+                    query();
+                    break;
+
+                case 5:
+                    revise();
+                    break;
+
+                case 0:
+                    getList();
+                    return;
+            }
+        }while (true);
     }
 }
