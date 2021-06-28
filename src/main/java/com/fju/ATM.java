@@ -115,10 +115,7 @@ public class ATM {
             System.out.println("You can't transfer money to yourself");
             return;
         }
-        if (atmuser!=nulluser){
-            System.out.println("Error,this account does not exist, please try again");
-            return;
-        }
+
         if (atmuser !=null){
             System.out.println("Please enter the amounts you want to transfer:");
             int money = scan.nextInt();
