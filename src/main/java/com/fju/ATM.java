@@ -18,4 +18,13 @@ public class ATM {
         size=2;
 
     }
+    public User login(String account,int password){
+        for (int i = 0; i < size; i++) {
+            if ((users[i].getAccount().equals(account))&&users[i].getPassword()==password){
+                atmuser =users[i];
+                return users[i];
+            }
+        }
+        return null;
+    }
 }
