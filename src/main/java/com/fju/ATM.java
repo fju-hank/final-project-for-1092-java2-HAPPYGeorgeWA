@@ -105,26 +105,25 @@ public class ATM {
         System.out.println("Please enter the account number you want to transfer:");
         Scanner scan = new Scanner(System.in);
         String account= scan.next();
-        User nulluser =null;
+        User nuser =null;
         for (int i = 0; i < size; i++) {
             if(users[i].getAccount().equals(account)){
-                nulluser =users[i];
+                nuser =users[i];
             }
         }
-        if (atmuser ==nulluser){
+        if (atmuser == nuser){
             System.out.println("You can't transfer money to yourself");
             return;
         }
-
         if (atmuser !=null){
             System.out.println("Please enter the amounts you want to transfer:");
             int money = scan.nextInt();
             if (money>0&&money<= atmuser.getBalance()){
                 atmuser.setBalance(atmuser.getBalance()-money);
-                nulluser.setBalance(nulluser.getBalance()+money);
+                nuser.setBalance(nuser.getBalance()+money);
                 System.out.println("Success");
                 System.out.println("Your balance:"+ atmuser.getBalance());
-                System.out.println("Account:"+nulluser.getAccount()+",its balance:"+nulluser.getBalance());
+                System.out.println("Account:"+nuser.getAccount()+",its balance:"+nuser.getBalance());
                 return;
             }else {
                 System.out.println("Error");
